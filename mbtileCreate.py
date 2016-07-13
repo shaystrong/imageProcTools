@@ -15,7 +15,7 @@ import os, glob, time, re, sys
 import argparse
 
 # Use:
-#    python mbtileCreate.py --llong -97.321757 --llat 32.847790 --ulong -97.318813 --ulat 32.854694 --zoom 21 --mbtilePath "/Data/collect_zoom21.mbtiles"
+#    python mbtileCreate.py --llong -97.321757 --llat 32.847790 --ulong -97.318813 --ulat 32.854694 --zoom 21 --mbtilePath "/Data/collect_zoom21.mbtiles" --url myURL
 #    
 
 #Uses 'MBTilesBuilder' function to download imagery at a specified zoom level and create an mbtiles file. Provide bounding box.
@@ -44,7 +44,7 @@ parser.add_argument('--llong', '-llo', help="bounding box, lower longitude value
 parser.add_argument('--llat', '-lla', help="bounding box, lower latitude value")
 parser.add_argument('--zoom', '-z', help="zoom levels")
 parser.add_argument('--mbtilePath', '-p',help="where to put the mbtile file")
-parser.add_argument('--url', '-p',help="full api call/url to server")
+parser.add_argument('--url', '-u',help="full api call/url to server")
 
 args = parser.parse_args()
 
@@ -54,6 +54,7 @@ llong=args.llong
 llat=args.llat
 zoom=args.zoom
 mbtilePath=args.mbtilePath
+urlMe=args.url
 
 logging.basicConfig(level=logging.DEBUG)
 
